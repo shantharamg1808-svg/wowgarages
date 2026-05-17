@@ -1,12 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* ========================================== */
+  /* CHANGE YOUR GLOBAL FONT HERE               */
+  /* 1. Change the Google Font URL import above */
+  /* 2. Change the font name below              */
+  /* ========================================== */
+  --font-primary: 'Outfit';
+}
+
 html, body, #root {
   min-height: 100%;
   margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; /* Prevents horizontal overscrolling */
 }
 
 body {
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: var(--font-primary), ui-sans-serif, system-ui, sans-serif;
 }
