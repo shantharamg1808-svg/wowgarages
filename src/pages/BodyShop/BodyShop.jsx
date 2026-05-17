@@ -1,8 +1,8 @@
 import React from 'react';
 import { Camera, ShieldCheck, Sparkles } from 'lucide-react';
-import Button from '../components/Button';
-import BeforeAfterSlider from '../components/BeforeAfterSlider';
-import { useTheme } from '../context/ThemeContext';
+import Button from '../../components/Button';
+import BeforeAfterSlider from '../../components/BeforeAfterSlider';
+import { useTheme } from '../../context/ThemeContext';
 
 const BodyShop = () => {
   const { isDark } = useTheme();

@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
 import Navbar from './components/Navbar';
@@ -7,10 +7,10 @@ import Footer from './components/Footer';
 import Button from './components/Button';
 import { ChevronRight } from 'lucide-react';
 
-const Home = lazy(() => import('./pages/Home'));
-const ServicePricing = lazy(() => import('./pages/ServicePricing'));
-const BodyShop = lazy(() => import('./pages/BodyShop'));
-const Accessories = lazy(() => import('./pages/Accessories'));
+import Home from './pages/Home/Home';
+import ServicePricing from './pages/ServicePricing/ServicePricing';
+import BodyShop from './pages/BodyShop/BodyShop';
+import Accessories from './pages/Accessories/Accessories';
 
 const AppLayout = () => {
   const { isDark } = useTheme();
@@ -20,14 +20,12 @@ const AppLayout = () => {
       <Navbar />
       
       <main>
-        <Suspense fallback={<div className="min-h-[60vh]"></div>}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/service" element={<ServicePricing />} />
-            <Route path="/bodyshop" element={<BodyShop />} />
-            <Route path="/accessories" element={<Accessories />} />
-          </Routes>
-        </Suspense>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/service" element={<ServicePricing />} />
+          <Route path="/bodyshop" element={<BodyShop />} />
+          <Route path="/accessories" element={<Accessories />} />
+        </Routes>
       </main>
 
       <ContactSection />

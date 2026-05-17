@@ -1,10 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Star, Users, Truck, CalendarCheck, Phone, Wrench, Sparkles, Music, ChevronRight, CheckCircle2, Shield, FileText, Settings } from 'lucide-react';
-import Button from '../components/Button';
-import ReviewMarquee from '../components/ReviewMarquee';
-import BrandsMarquee from '../components/BrandsMarquee';
-import { useTheme } from '../context/ThemeContext';
+import Button from '../../components/Button';
+import ReviewMarquee from '../../components/ReviewMarquee';
+import BrandsMarquee from '../../components/BrandsMarquee';
+import { useTheme } from '../../context/ThemeContext';
 
 const Home = () => {
   const { isDark } = useTheme();

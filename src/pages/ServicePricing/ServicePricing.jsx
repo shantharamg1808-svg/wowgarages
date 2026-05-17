@@ -1,8 +1,8 @@
 import React from 'react';
 import { CheckCircle2, Wrench as Tool, MessageCircle } from 'lucide-react';
-import Button from '../components/Button';
-import { useTheme } from '../context/ThemeContext';
-import { PRICING_PLANS, SERVICE_INCLUSIONS, COMPREHENSIVE_SERVICES } from '../data/constants';
+import Button from '../../components/Button';
+import { useTheme } from '../../context/ThemeContext';
+import { PRICING_PLANS, SERVICE_INCLUSIONS, COMPREHENSIVE_SERVICES } from '../../data/constants';
 
 const ServicePricing = () => {
   const { isDark } = useTheme();

@@ -1,7 +1,7 @@
 import React from 'react';
-import Button from '../components/Button';
-import { useTheme } from '../context/ThemeContext';
-import { ACCESSORY_ITEMS } from '../data/constants';
+import Button from '../../components/Button';
+import { useTheme } from '../../context/ThemeContext';
+import { ACCESSORY_ITEMS } from '../../data/constants';
 
 const Accessories = () => {
   const { isDark } = useTheme();
