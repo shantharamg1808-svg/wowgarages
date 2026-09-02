@@ -5,9 +5,11 @@ import Button from '../../components/Button';
 import ReviewMarquee from '../../components/ReviewMarquee';
 import BrandsMarquee from '../../components/BrandsMarquee';
 import { useTheme } from '../../context/ThemeContext';
+import { useModal } from '../../context/ModalContext';
 
 const Home = () => {
   const { isDark } = useTheme();
+  const { openModal } = useModal();
   const navigate = useNavigate();
 
   return (
@@ -15,14 +17,22 @@ const Home = () => {
       {/* Hero Section */}
       <div className={`relative h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden transition-colors duration-300`}>
         <div className={`absolute inset-0 ${isDark ? 'bg-gray-900' : 'bg-gray-100'}`}>
-          <img 
-            src="https://images.unsplash.com/photo-1613214149922-f1809c99b414?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
-            alt="Premium Garage Background" 
+          <img
+            src="https://images.unsplash.com/photo-1613214149922-f1809c99b414?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+            alt="Premium Garage Background"
             className="w-full h-full object-cover opacity-40 mix-blend-luminosity"
           />
-          <div className={`absolute inset-0 bg-gradient-to-t ${isDark ? 'from-gray-950 via-gray-900/60 to-gray-900/40' : 'from-white via-white/80 to-white/40'}`}></div>
+          {/* Gradient overlay — starts from yellow at top to blend with the navbar */}
+          <div
+            className="absolute inset-0 z-10"
+            style={{
+              background: isDark
+                ? 'linear-gradient(to bottom, #ffd630 0%, #ffd63020 12%, rgba(17,24,39,0.5) 30%, rgba(3,7,18,0.85) 100%)'
+                : 'linear-gradient(to bottom, #ffd630 0%, #ffd63020 12%, rgba(255,255,255,0.5) 30%, rgba(255,255,255,0.9) 100%)'
+            }}
+          />
         </div>
-        
+
         <div className="relative z-10 text-center px-4 max-w-5xl mx-auto mt-16">
           <div className="flex flex-wrap justify-center gap-3 mb-6">
             <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-semibold backdrop-blur-md transition-colors ${isDark ? 'bg-gray-800/80 border-yellow-400/30 text-yellow-400' : 'bg-white/90 border-yellow-400 text-yellow-600 shadow-sm'}`}>
@@ -45,7 +55,7 @@ const Home = () => {
             Electronic City's leading MULTIBRAND CAR SERVICE. From advanced diagnostics and premium accessories to PPF, tinkering, and exact-match painting. Hassle-free insurance claims handled end-to-end.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button onClick={() => window.open('https://wa.me/918095802170?text=Hi,%20I%20want%20to%20book%20an%20appointment.', '_blank')} className="text-lg px-8 py-4">
+            <Button onClick={openModal} className="text-lg px-8 py-4">
               <CalendarCheck size={20} className="mr-2" /> Book Appointment
             </Button>
             <Button variant="outline" className={`text-lg px-8 py-4 backdrop-blur-sm ${isDark ? 'bg-gray-900/50' : 'bg-white/50'}`} onClick={() => window.open('https://wa.me/918095802170', '_blank')}>
@@ -71,8 +81,8 @@ const Home = () => {
               { id: '/bodyshop', title: 'Body Shop & Spa', icon: <Sparkles size={32} />, desc: '9H Ceramic coatings, PPF, tinkering, and exact-match paintwork.', img: 'https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=600&q=80' },
               { id: '/accessories', title: 'Customisation Hub', icon: <Music size={32} />, desc: 'Premium Android infotainment, custom seating & acoustic damping.', img: 'https://images.unsplash.com/photo-1542282088-fe8426682b8f?auto=format&fit=crop&w=600&q=80' }
             ].map((service) => (
-              <div 
-                key={service.id} 
+              <div
+                key={service.id}
                 onClick={() => {
                   navigate(service.id);
                   window.scrollTo({ top: 0, behavior: 'smooth' });

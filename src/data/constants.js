@@ -6,9 +6,26 @@ export const REVIEWS = [
   "Fixed my AC perfectly in record time."
 ];
 
+import marutiLogo from '../assets/images/global/maruti-suzuki-logo.svg';
+import hyundaiLogo from '../assets/images/global/hyundai-automobiles-1.svg';
+import hondaLogo from '../assets/images/global/honda-automobiels-1.svg';
+import toyotaLogo from '../assets/images/global/toyota-7.svg';
+import tataLogo from '../assets/images/global/tata-motors.svg';
+import mahindraLogo from '../assets/images/global/mahindra-mahindra-logo.svg';
+import kiaLogo from '../assets/images/global/kia-4.svg';
+import fordLogo from '../assets/images/global/ford-logo-flat.svg';
+import vwLogo from '../assets/images/global/volkswagen-10.svg';
+
 export const BRANDS = [
-  "Maruti", "Hyundai", "Honda", "Toyota", "Tata", "Mahindra", 
-  "KIA", "Ford", "Volkswagen", "Skoda"
+  { name: "Maruti", logo: marutiLogo },
+  { name: "Hyundai", logo: hyundaiLogo },
+  { name: "Honda", logo: hondaLogo },
+  { name: "Toyota", logo: toyotaLogo },
+  { name: "Tata", logo: tataLogo },
+  { name: "Mahindra", logo: mahindraLogo },
+  { name: "KIA", logo: kiaLogo },
+  { name: "Ford", logo: fordLogo },
+  { name: "Volkswagen", logo: vwLogo }
 ];
 
 export const PRICING_PLANS = [
